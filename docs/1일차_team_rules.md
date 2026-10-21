@@ -3,11 +3,11 @@
 ## 0️⃣ 팀원 소개
 | 이름 | GitHub |
 |---|---|
-| 김정린 (팀장) | [@JR1121-oss] (https://github.com/JR1121-oss) |
-| 나영철 | [@oehcgnuoy-dev] (https://github.com/loehcgnuoy-dev) |
+| 김정린 (팀장) | [@JR1121-oss](https://github.com/JR1121-oss) |
+| 나영철 | [@oehcgnuoy-dev](https://github.com/loehcgnuoy-dev) |
 | 여은지 | [@ey607928-ai](https://github.com/ey607928-ai) |
 | 이재경 | [@worud01253-creator](https://github.com/worud01253-creator) |
-| 조예진 | [@redisfree] (https://github.com/redisfree) |
+| 조예진 | [@redisfree](https://github.com/redisfree) |
 
 ## 1️⃣ ☝🏻 소통 및 회의 규칙 (Communication)
 팀원 간 오해를 줄이고 정보 격차를 없애기 위한 규칙입니다.
