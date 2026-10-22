@@ -1,39 +1,20 @@
 # app/apis/practice_apis.py
-
 import re
-from typing import Optional
-
+from typing import Optional, List
 from fastapi import APIRouter, HTTPException, status
 from pydantic import BaseModel, Field, field_validator
 
+router = APIRouter()
+
+# 과제에서 제공된 기본 유저 데이터
 user_list = [
-	{
-		"id": 1,
-		"name": "홍길동",
-		"age": 24,
-		"email": "gildong24@example.com",
-		"password": "Password1234!!"
-	},
-	{
-		"id": 2,
-		"name": "장문복",
-		"age": 21,
-		"email": "moonluck12@example.com",
-		"password": "Check1321!"
-	},
-	{
-		"id": 3,
-		"name": "임우진",
-		"age": 31,
-		"email": "limousine33@example.com",
-		"password": "lwsPAssword12@"
-	}
+    {"id": 1, "name": "홍길동", "age": 24, "email": "gildong24@example.com", "password": "Password1234!!"},
+    {"id": 2, "name": "장문복", "age": 21, "email": "moonluck12@example.com", "password": "Check1321!"},
+    {"id": 3, "name": "임우진", "age": 31, "email": "limousine33@example.com", "password": "lwsPAssword12@"}
 ]
 
-router = APIRouter(prefix="/practice_api", tags=["practice_api"])
-
+# 4번 요구사항: 유효성 검사 유틸 및 수정 Pydantic 모델
 EMAIL_PATTERN = re.compile(r"^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$")
-
 
 def validate_password(value: str) -> str:
     if not 8 <= len(value) <= 20:
@@ -46,14 +27,12 @@ def validate_password(value: str) -> str:
         raise ValueError("비밀번호에는 특수문자가 1개 이상 필요합니다.")
     return value
 
-
 def validate_email(value: str) -> str:
     if len(value) > 30:
         raise ValueError("이메일은 30자 이하여야 합니다.")
     if not EMAIL_PATTERN.match(value):
         raise ValueError("이메일 형식이 올바르지 않습니다.")
     return value
-
 
 class UserUpdate(BaseModel):
     age: Optional[int] = Field(default=None, ge=14)
