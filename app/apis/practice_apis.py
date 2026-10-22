@@ -1,10 +1,8 @@
 from fastapi import FastAPI, APIRouter, HTTPException
 from pydantic import BaseModel
+from typing import List
 
-# FastAPI 앱 및 라우터 설정 (서버 실행을 위해 필수)
-app = FastAPI()
-router = APIRouter(prefix="/practice_api")
-app.include_router(router)
+router = APIRouter()
 
 # 과제에서 제공된 기본 유저 데이터
 user_list = [
